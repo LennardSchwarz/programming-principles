@@ -1,0 +1,15 @@
+name: Redeploy
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger rebuild via Portainer webhook
+        run: |
+          curl -X POST ${{ secrets.PORTAINER_APP_WEBHOOK_URL }}
