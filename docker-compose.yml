@@ -4,7 +4,7 @@ services:
     pull_policy: build
     restart: unless-stopped
     networks:
-      - external-network
+      - pangolin
     labels:
       traefik.enable: true
       traefik.http.routers.programming-principles.rule: Host(`programming.principles.lenn.rocks`) 
@@ -12,5 +12,5 @@ services:
 
 
 networks:
-  external-network:
+  pangolin:
     external: true # hook into public network instead of creating our own
