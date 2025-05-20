@@ -7,7 +7,7 @@ services:
       - traefik-proxy
     labels:
       traefik.enable: true
-      traefik.http.routers.programming-principles.rule: Host(`programming.principles.lenn.rocks`) 
+      traefik.http.routers.programming-principles.rule: Host(`programming.principles.lenn.rocks`) || Host(`programming-principles.lenn.rocks`)
       traefik.http.services.programming-principles.loadbalancer.server.port: 80 # port to route to internally
 
 
